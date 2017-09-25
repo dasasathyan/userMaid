@@ -1,0 +1,40 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Change Availability{% endblock %}
+
+{% block page_description %}Change Availability..{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+  <div class="container">
+<form class="js-form" method="{{form.method | default('GET')}}" action="{{site.uri.public}}/confirmavailability">
+  {% include "forms/csrf.html.twig" %}
+    <h1>Cooks engaged: </br></h1>
+    {% for i in ckcounts %}
+        <h4>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" name="ckmobno[]" value="{{i.mobno}}"> {{i.name}} {{i.gender}} {{i.mobno}}
+        </label>
+      </h4>
+    {% endfor %}
+
+    <h1>Cleaners engaged: </br></h1>
+    {% for i in clcounts %}
+        <h4>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" name="clmobno[]"  value="{{i.mobno}}"/> {{i.name}} {{i.gender}} {{i.mobno}}
+        </label>
+      </h4>
+    {% endfor %}<br>
+    <h1>Drivers Engaged: </br></h1>
+    {% for i in drcounts %}
+        <h4>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" name="drmobno[]"  value="{{i.mobno}}"/> {{i.name}} {{i.gender}} {{i.mobno}}
+        </label>
+      </h4>
+    {% endfor %}<br>
+<button type="submit" class="btn btn-warning">Change Availability</button>
+</div>
+    {% endblock %}

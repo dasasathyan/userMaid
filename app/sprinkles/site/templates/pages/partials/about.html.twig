@@ -1,0 +1,177 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "about" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}{{translate("ABOUT")}}{% endblock %}
+
+{% block page_description %}All about my UserFrosting website.{% endblock %}
+
+{% block body_matter %}
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-responsive" src="{{assets.url("assets://images/about/6.jpg")}}" alt="">
+    </div>
+    <div class="col-md-6">
+        <h2>About Howzhold</h2>
+        <p>Our vision is to be the India's largest<font color="red>"><b>aggregator for domestic maid bureaus;</b></font> to build a place where anyone can come to <b>discover and hire</b> any domestic help they want.</p>
+        <p>We are building an unique <font color="red>"> <b>Technology</b> </font> company <br>Howzhold is India's only platform through which home owners can hire a domestic help online. The current $7 billion industry is highly unorganized and is plagued with non-professionals who not only take the home owners for a ride but also leave a very bad taste and name for the industry</p>
+        <p>This company is striving to change this forever. Home owners can now watch pre-recorded interviews online before meeting the help personally. Hence disrupting a space which has always been a very big problem in a country like India</p>
+    </div>
+</div>
+<!-- /.row -->
+<br><br><br><br>
+<!-- Team Members -->
+<div class="row">
+    <div class="col-lg-12">
+
+        <h2 class="page-header" style="text-align:center; font-size:50px;color:#ea4d45"><strong>FIVE WAYS WE ARE DIFFERENT</strong></h2>
+        <br><br>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="thumbnail">
+            <img class="img-responsive" src="{{assets.url("assets://images/about/1.jpg")}}"   alt="">
+            <div class="caption">
+                <h3>We are professionals<br>
+                    <!--<small>Job Title</small>-->
+                </h3>
+                <p>Almost 99% of the all the maid bureaus in the city are run by people who are not educated but have access to maids because they live in the same area. They get into the business to make quick money and get out. This results in extremely poor client satisfaction.</p></br>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="col-md-4 text-center">
+        <div class="thumbnail">
+            <img class="img-responsive" src="//placehold.it/750x450" alt="">
+            <div class="caption">
+                <h3>John Smith<br>
+                    <!--<small>Job Title</small>-->
+               <!-- </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+    <div class="col-md-4 text-center">
+        <div class="thumbnail">
+            <img class="img-responsive" src="{{assets.url("assets://images/about/2.jpg")}}" alt="">
+            <div class="caption">
+                <h3>We are a technology company<br>
+                    <!--<small>Job Title</small>-->
+                </h3>
+                <p>The usual process of hiring a maid is calling up a maid bureau who will make a note of your requirement and will send you 2 or 3 options and you have to choose one. With the use of technology you can watch thousands of videos and meet only those who you feel is fit for the job</p>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="thumbnail">
+            <img class="img-responsive" src="{{assets.url("assets://images/about/3.jpg")}}" alt="">
+            <div class="caption">
+                <h3>We are an aggregator<br>
+                    <!--<small>Job Title</small>-->
+                </h3>
+                <p>We partner with the best and the most reliable maid bureaus. When we get your requirement, all of them jump into action to make sure you get a maid of your preference. Hence the turnaround time reduces</p><br>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="thumbnail">
+            <img class="img-responsive" src="{{assets.url("assets://images/about/4.jpg")}}" alt="">
+            <div class="caption">
+                <h3>We deliver great experience and value your time<br>
+                    <!--<small>Job Title</small>-->
+                </h3>
+                <p>Our customer service executives have been trained to make sure that your experience of using our services is according to global standards</p><br>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+      <div class="col-md-4 text-center"></div>
+
+
+    <div class="col-md-4 text-center">
+        <div class="thumbnail">
+            <img class="img-responsive" src="{{assets.url("assets://images/about/5.jpg")}}" alt="">
+            <div class="caption">
+                <h3>We hire smart and creative people<br>
+                    <!--<small>Job Title</small>-->
+                </h3>
+                <p>We strongly believe that great companies are built by great people. We hire smart, ambitious youngters who are not doing this because of their salary but because they think they are working towards making this a billion dollar company</p>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Our Customers -->
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Our Customers</h2>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <img class="img-responsive customer-img" src="//placehold.it/500x300" alt="">
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <img class="img-responsive customer-img" src="//placehold.it/500x300" alt="">
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <img class="img-responsive customer-img" src="//placehold.it/500x300" alt="">
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <img class="img-responsive customer-img" src="//placehold.it/500x300" alt="">
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <img class="img-responsive customer-img" src="//placehold.it/500x300" alt="">
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <img class="img-responsive customer-img" src="//placehold.it/500x300" alt="">
+    </div>
+</div>
+{% endblock %}

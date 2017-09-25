@@ -1,0 +1,22 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Change Availability{% endblock %}
+
+{% block page_description %}Change Availability..{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+
+  {% for i in count %}
+  <p>Mr. {{i.name}}'s status is changed</p>
+
+{% endfor %}
+
+{% block scripts_page %}
+ <script>
+ var link=/changeavailability;
+window.location=link;
+ </script>
+{% endblock %}
+    {% endblock %}

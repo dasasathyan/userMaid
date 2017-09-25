@@ -1,0 +1,30 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Cancel  your booking{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+    {% include "pages/driving/driving-default-options.html.twig" %}
+
+    <h3>
+      <table class="table table-bordered table-hover" style="text-align:center">
+  <tr class="info">
+    <th>Booking ID</th>
+    <th>Driveer Name</th>
+    <th>Mobile used for booking</th>
+    <th>Booked On</th>
+  </tr>
+
+    {% for i in bookings %}
+<tr>
+  <td>DR{{i.id}}</td>
+  <td>{{i.driver_name}}</td>
+  <td>{{i.contact_no}}</td>
+  <td>{{i.created_at}}</td>
+
+</tr>
+
+                {% endfor %}
+              </table>
+  {% endblock %}

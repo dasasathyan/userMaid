@@ -1,0 +1,187 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "home" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}{{translate("HOME")}}{% endblock %}
+
+{% block page_description %}{{translate("WELCOME_TO", {'title': site.title})}}{% endblock %}
+
+{% block body_matter %}
+
+    <!-- Header Carousel -->
+
+    <div class="box box-solid">
+        <div class="box-body">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <a href="cooking"><img src="{{assets.url("assets://images/slider/cooking.jpg")}}"  alt="Cooking"></a>
+
+                    <div class="carousel-caption">
+                      <strong>Cooking</strong>
+                    </div>
+                  </div>
+                  <div class="item">
+                  <a href="cleaning"><img src="{{assets.url("assets://images/slider/cleaning.jpg")}}"  alt="Cleaning"></a>
+
+                    <div class="carousel-caption">
+                      <strong>Cleaning</strong>
+                    </div>
+                  </div>
+                  <div class="item">
+                  <a href="driving">  <img src="{{assets.url("assets://images/slider/driving.jpg")}}"  alt="Driving"></a>
+
+                    <div class="carousel-caption">
+                      <strong>Driving</strong>
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="fa fa-angle-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="fa fa-angle-right"></span>
+                </a>
+            </div>
+            <!-- /.carousel -->
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+
+
+
+    <!-- Portfolio Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header" id="booking" style="text-align:center">Book your services here</h1>
+        </div>
+        <div class="col-md-4 col-sm-6 cookingnav">
+            <a href="cooking">
+                <img class="img-responsive img-portfolio img-hover" src="{{assets.url("assets://images/navigation/cook1.png")}}" alt="" onmouseover="this.src='{{assets.url("assets://images/navigation/cooking.png")}}'" onmouseout="this.src='{{assets.url("assets://images/navigation/cook1.png")}}'">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6 cleaningnav">
+            <a href="cleaning">
+                <img class="img-responsive img-portfolio img-hover" src="{{assets.url("assets://images/navigation/cleaningbw.png")}}" alt="" onmouseover="this.src='{{assets.url("assets://images/navigation/cleaning.png")}}'" onmouseout="this.src='{{assets.url("assets://images/navigation/cleaningbw.png")}}'">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6 drivingnav">
+            <a href="driving">
+                <img class="img-responsive img-portfolio img-hover" src="{{assets.url("assets://images/navigation/drivingbw.png")}}" alt="" onmouseover="this.src='{{assets.url("assets://images/navigation/driving.png")}}'" onmouseout="this.src='{{assets.url("assets://images/navigation/drivingbw.png")}}'">
+            </a>
+        </div>
+    <!--    <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="{{assets.url("assets://images/navigation/babybw.png")}}" alt="" onmouseover="this.src='{{assets.url("assets://images/navigation/baby.png")}}'" onmouseout="this.src='{{assets.url("assets://images/navigation/babybw.png")}}'">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="//placehold.it/700x450" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="portfolio-item.html">
+                <img class="img-responsive img-portfolio img-hover" src="//placehold.it/700x450" alt="">
+            </a>
+        </div>-->
+    </div>
+    <!-- /.row -->
+    <!-- Marketing Icons Section -->
+
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Welcome to HOWZHOLD
+            </h1>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> HOWZHOLD</h4>
+                </div>
+                <div class="panel-body">
+                    <p>HOWZHOLD is a website where you can book Cooks,Cleaners and Drivers from Bangalore.</p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-gift"></i> Free Cancellation</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Changed your mind at last minute? we have the option of cancelling your bookings at last minute</br></p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Compared to few existing systems ours can be used easily..</br></p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Book your Domestic Helper</h2>
+        </div>
+        <div class="col-md-6">
+            <p>The main advantages with HOWZHOLD are</p>
+            <ul>
+                <li><strong>Choose us</strong>
+                </li>
+                <li>The proper validation of address is being done from the Adhar Card of the person.</li>
+                <li>The price is flexible so that the middle-class person of the society can afford it.</li>
+                <li>We will have a cancellation of the service by a call or just by one click.</li>
+                <li>We are planning to have a rating so that the maid can rate and the customer can rate.</li>
+                <li>Our system will provide the service within 2 hours</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" src="{{assets.url("assets://images/logo.png")}}" alt="">
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="well">
+        <div class="row">
+            <div class="col-md-8">
+                <p>If you have any feedback or any issues in our website feel free to call us </p>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block scripts_page %}
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: false // set to false to prevent auto-advance
+    })
+    </script>
+{% endblock %}

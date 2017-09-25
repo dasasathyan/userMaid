@@ -1,0 +1,46 @@
+{% extends "pages/abstract/default.html.twig" %}
+{# Overrides blocks in head of base template #}
+{% block page_title %}Booking Confirmation for booking your Cook{% endblock %}
+
+{% block page_description %}Please confirm your booking..{% endblock %}
+
+{% block body_matter %}
+
+    Welcome, {{ current_user.first_name }}!
+    {% include "pages/cooking/cooking-default-options.html.twig" %}
+<div class="container">
+    <form class="js-form" method="{{form.method | default('POST')}}" action="{{site.uri.public}}/cooking/book/confirmation">
+        {% include "forms/csrf.html.twig" %}
+        <div class="col-sm-6">
+            <div class="form-group">
+            <div class="col-md-10">
+            <h3> Select the cook you want</h3>
+
+              <div class="cookSelect">
+
+
+
+      {% for i in counts %}
+          <h2>
+            <input type="radio" name="mobno" value="{{i.mobno}}"/>
+              <label> {{i.name}} {{i.gender}}
+              </label>
+          </h2>
+      {% endfor %}
+
+    </br></br>
+      <h3> Enter your address here</h3>
+      <textarea class="form-control" rows="3" name="address" required></textarea></br>
+      <h3> Enter your mobile number in which you want our cook to reach you in </h3>
+      <input type="text" class="form-control" placeholder="Mobile Number" name="contactno" required/></br>
+
+              <button type="submit" class="btn btn-warning"><strong>Confirm your Booking</strong></button>
+
+
+          </div></div>
+          </div>
+        </div>
+      </form>
+
+</div>
+{% endblock %}

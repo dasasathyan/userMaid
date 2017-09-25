@@ -1,0 +1,17 @@
+{% extends "pages/abstract/default.html.twig" %}
+{# Overrides blocks in head of base template #}
+{% block page_title %}Booking Confirmation for booking your cleaner{% endblock %}
+
+{% block page_description %}Your cleaner is being booked{% endblock %}
+
+{% block body_matter %}
+
+    Hi, {{ current_user.first_name }}!
+    {% include "pages/driving/driving-default-options.html.twig" %}
+
+    <img src="{{assets.url("assets://images/confirm.gif")}}" style="height:350px;width:350px;"/>
+
+
+    <h1> Your cleaner {{name}} is booked.. Your cleaner's contact number is {{mobno}} and your booking ID is CK{{booking_id}}</h1>
+
+{% endblock %}

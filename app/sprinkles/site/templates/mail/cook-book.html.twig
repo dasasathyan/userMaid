@@ -1,0 +1,18 @@
+{% block subject %}
+    Your Cook Booking Confirmation
+{% endblock %}
+
+{% block body %}
+<p>
+    Dear {{user.first_name}},
+</p>
+<p>
+    Your Cook Booking is confirmed.  Your cook's name is {{cook_name}}.. Your Cook's contact number is {{mobno}} and your booking ID is CK{{id}}
+
+    </a>
+</p>
+<p>
+    With regards,<br>
+    The {{site.title}} Team
+</p>
+{% endblock %}

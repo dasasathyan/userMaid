@@ -1,0 +1,130 @@
+<form id="cleaningform" method="get">
+  {% include "forms/csrf.html.twig" %}
+  <div class="form-group has-feedback">
+      <div class = "row">
+      <div class="col-md-3"></div>
+        <div class="col-md-5">
+      <h3> How big is your place?</h3>
+              <select class="form-control" onchange="showDiv(this)">
+          <option value="250">< 500 sq.ft</option>
+          <option value="500">501-1000 sq.ft</option>
+          <option value="750">1000-1500 sq.ft</option>
+          <option value="1000">1500-2000 sq.ft</option>
+          <option value="1500">> 2000 sq.ft</option>
+            </select>
+            </div></div>
+
+            <div class = "row">
+            <div class="col-md-3"></div>
+              <div class="col-md-5">
+            <h3> Select the time</h3>
+                    <select class="form-control">
+                <option>9:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
+                <option>13:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+                <option>17:00</option>
+                <option>18:00</option>
+                <option>19:00</option>
+                <option>20:00</option>
+                  </select>
+                  </div></div><br>
+
+                  <div class = "row">
+                  <div class="col-md-3"></div>
+                    <div class="col-md-5">
+                    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                    <link rel="stylesheet" href="/resources/demos/style.css">
+                    <p>Date: <input type="text" id="datepicker"></p>
+                  {% block scripts_site %}
+                  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                  <script>
+                  $( function() {
+                    $( "#datepicker").datepicker();
+                  } );
+                  
+</script>
+        {{ assets.js() | raw }}
+    {% endblock %}
+    </div></div>
+    <script>
+    function showDiv(select){
+       if(select.value==250){
+        document.getElementById('rs250').style.display = "block";
+        document.getElementById('rs500').style.display = "none";
+        document.getElementById('rs750').style.display = "none";
+        document.getElementById('rs1000').style.display = "none";
+        document.getElementById('rs1500').style.display = "none";
+
+       }
+
+       else if (select.value==500) {
+         document.getElementById('rs250').style.display = "none";
+         document.getElementById('rs500').style.display = "block";
+         document.getElementById('rs750').style.display = "none";
+         document.getElementById('rs1000').style.display = "none";
+         document.getElementById('rs1500').style.display = "none";
+       }
+
+       else if (select.value==750) {
+         document.getElementById('rs250').style.display = "none";
+         document.getElementById('rs500').style.display = "none";
+         document.getElementById('rs750').style.display = "block";
+         document.getElementById('rs1000').style.display = "none";
+         document.getElementById('rs1500').style.display = "none";
+       }
+
+       else if (select.value==1000) {
+         document.getElementById('rs250').style.display = "none";
+         document.getElementById('rs500').style.display = "none";
+         document.getElementById('rs750').style.display = "none";
+         document.getElementById('rs1000').style.display = "block";
+         document.getElementById('rs1500').style.display = "none";
+       }
+
+       else if (select.value==1500) {
+         document.getElementById('rs250').style.display = "none";
+         document.getElementById('rs500').style.display = "none";
+         document.getElementById('rs750').style.display = "none";
+         document.getElementById('rs1000').style.display = "none";
+         document.getElementById('rs1500').style.display = "block";
+       }
+
+       else{
+        document.getElementById('hidden_div').style.display = "none";
+       }
+    }
+    </script>
+    <div class="row">
+      <div class="col-md-3"> </div>
+        <div class="col-md-5">
+          <h3>The fare for cleaning your premises is: </h3>
+          <h3 id ="rs250">₹ 250</h3>
+          <h3 id ="rs500" style="display: none;">₹ 500</h3>
+          <h3 id ="rs750" style="display: none;">₹ 750</h3>
+          <h3 id ="rs1000" style="display: none;">₹ 1000</h3>
+          <h3 id ="rs1500" style="display: none;">₹ 1500</h3>
+        </div>
+      </div>
+      <div class = "row">
+      <div class="col-md-3"></div>
+        <div class="col-md-5">
+      <h3>Where do you want our Cleaner to come</h3>
+
+        <input type="text" id="cleaning_area" name="cleaning_area" class="form-control" placeholder="Enter your area" required  />
+        </div>
+            </div>
+
+                <div class = "row">
+                  <div class="col-md-3"> </div>
+                  <div class="col-md-5">
+                  <button type="submit" id="submitCleaning" class="btn btn-primary btn-lg btn-block">Check Availability</button><br>
+                  <button type="button" class="btn btn-default btn-xs"><a href="{{site.uri.public}}#booking">< Book some other service</a></button>
+                  </div></div>
+</div>
+                </form>

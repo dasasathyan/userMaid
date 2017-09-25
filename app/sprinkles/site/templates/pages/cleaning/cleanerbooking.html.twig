@@ -1,0 +1,53 @@
+{% extends "pages/abstract/default.html.twig" %}
+{# Overrides blocks in head of base template #}
+{% block page_title %}Booking Confirmation for booking your cleaner{% endblock %}
+
+{% block page_description %}Please confirm your booking..{% endblock %}
+
+{% block body_matter %}
+
+    Welcome, {{ current_user.first_name }}!
+    {% include "pages/cleaning/cleaning-default-options.html.twig" %}
+
+    <form class="js-form" method="{{form.method | default('GET')}}" action="{{site.uri.public}}/cleaning/book/confirmation">
+        {% include "forms/csrf.html.twig" %}
+        <div class="col-sm-6">
+            <div class="form-group">
+            <div class="col-md-10">
+            <h3> Select the cleaner you want</h3>
+
+              <div class="cleanerSelect">
+
+
+
+      {% for i in counts %}
+      {% if counts == 0 %}
+
+      <h1> no cleaners currently available at your area </h1>
+
+      {% else %}
+
+          <h2>
+            <input type="radio" name="mobno" value="{{i.mobno}}"/>
+              <label> {{i.name}} {{i.gender}}
+              </label>
+          </h2>
+          {% endif %}
+      {% endfor %}
+
+    </br></br>
+      <h3> Enter your address here</h3>
+      <textarea class="form-control" rows="3" name="address" required></textarea></br>
+      <h3> Enter your mobile number in which you want our cleaner to reach you in </h3>
+      <input type="text" class="form-control" placeholder="Mobile Number" name="contactno" required/></br>
+
+              <button type="submit" class="btn btn-warning"><strong>Confirm your Booking</strong></button>
+
+
+          </div></div>
+          </div>
+        </div>
+      </form>
+
+
+{% endblock %}

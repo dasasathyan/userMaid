@@ -1,0 +1,32 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Cancel  your booking{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+    <div class="container">
+    {% include "pages/cooking/cooking-default-options.html.twig" %}
+
+    <h3>
+      <table class="table table-bordered table-hover" style="text-align:center">
+  <tr class="info">
+    <th>Booking ID</th>
+    <th>Cook Name</th>
+    <th>Mobile used for bookings</th>
+    <th>Booked On</th>
+  </tr>
+
+    {% for i in bookings %}
+<tr>
+  <td>CK{{i.id}}</td>
+  <td>{{i.cook_name}}</td>
+  <td>{{i.contact_no}}</td>
+  <td>{{i.created_at}}</td>
+
+</tr>
+
+                {% endfor %}
+              </table>
+            </div>
+  {% endblock %}

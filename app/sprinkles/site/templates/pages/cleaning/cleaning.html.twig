@@ -1,0 +1,17 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Cleaning{% endblock %}
+
+{% block page_description %}The Cleaning section of HOWZHOLD.{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+    {% include "pages/cleaning/cleaning-default-options.html.twig" %}
+
+    {% include "forms/cleaningform.html.twig" %}
+
+    {% endblock %}
+    {% block scripts_page %}
+    <script src="{{ assets.url('assets://js/cleaningform.js') |raw }}"></script>
+{% endblock %}

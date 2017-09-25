@@ -1,0 +1,5 @@
+{% include "forms/csrf.html.twig" %}
+<p>Choose your Date: <input type="text" id="datepicker"></p>
+{% block scripts_page %}
+ <script src="{{ assets.url('assets://js/calendar.js') |raw }}"></script>
+{% endblock %}

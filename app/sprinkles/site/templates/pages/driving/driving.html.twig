@@ -1,0 +1,17 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Driving{% endblock %}
+
+{% block page_description %}The driving section of HOWZHOLD.{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+    {% include "pages/driving/driving-default-options.html.twig" %}
+
+    {% include "forms/drivingform.html.twig" %}
+
+    {% endblock %}
+    {% block scripts_page %}
+    <script src="{{ assets.url('assets://js/drivingform.js') |raw }}"></script>
+{% endblock %}

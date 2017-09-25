@@ -1,0 +1,21 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Cancel  your booking{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+    {% include "pages/cleaning/cleaning-default-options.html.twig" %}
+    <form class="js-form" method="{{form.method | default('GET')}}" action="{{site.uri.public}}/cleaning/bill">
+      {% include "forms/csrf.html.twig" %}
+    <h3> Enter your Booking ID </h3>
+    <input type="text" class="form-control" placeholder="Booking ID" name="id" required/></br>
+
+            <input type="submit" class="btn btn-warning" value="Generate BILL" onclick="billgenerate()"/>
+
+  {% for i in bills %}
+            <h4>{{i.id}} The cleaner name is {{i.cleaner_name}} and the mobile number used for booking is {{i.mobile}} and was booked on {{i.created_at}}</h4>
+
+          </form>
+              {% endfor %}
+{% endblock %}

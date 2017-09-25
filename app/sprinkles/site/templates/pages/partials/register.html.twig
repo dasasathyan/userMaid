@@ -1,0 +1,67 @@
+{% extends "pages/abstract/base.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}{{translate('REGISTER')}}{% endblock %}
+
+{% block page_description %}{{translate('PAGE.LOGIN.DESCRIPTION', {'site_name': site.title })}}{% endblock %}
+
+{% block body_attributes %}
+    class="hold-transition login-page"
+{% endblock %}
+
+{% block content %}
+<div class="login-box">
+    <div class="login-logo">
+        <a href="{{site.uri.public}}"><img src="{{assets.url("assets://userfrosting/images/logo.png")}}" style="height:50px;width:50px"/>{{site.title}}</a>
+    </div>
+    <!-- /.login-logo -->
+
+    <div class="login-box-body register-form">
+        <p class="login-box-msg"><strong>{{translate('REGISTER')}}</strong></p>
+        <div class="form-alerts" id="alerts-page"></div>
+        <form id="serviceregister" role="form" action="{{site.uri.public}}/account/register/services" method="post" class="r-form">
+            {% include "forms/csrf.html.twig" %}
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="serviceselect" id="cook" value="cook" aria-label="cook">Cook
+              </label>
+              <label>
+                <input type="radio" name="serviceselect" id="cleaner" value="cleaner" aria-label="Cleaner">Cleaner
+              </label>
+              <label>
+                <input type="radio" name="serviceselect" id="driver" value="driver" aria-label="Driver">Driver
+              </label>
+            </div>
+
+            <div class="form-group">
+               <label for="name">Name</label>
+               <input type="text" class="form-control" id="name" placeholder="Enter your name">
+             </div>
+
+              <div class="form-group">
+    <label for="exampleInputEmail1">Enter your area</label>
+    <input type="text" class="form-control" id="area" placeholder="Area">
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="gender" id="genderm" value="m" aria-label="cook">Male
+    </label>
+    <label>
+      <input type="radio" name="gender" id="genderf" value="f" aria-label="Cleaner">Female
+    </label>
+  </div>
+  <div class="form-group">
+     <label for="mobno">Mobile Number</label>
+     <input type="number" class="form-control" id="name" placeholder="Enter your Mobile Number">
+   </div>
+   <div>
+       <button type="submit" class="btn btn-block btn-primary">{{translate('REGISTER_ME')}}</button>
+   </div>
+ </form>
+ </div>
+
+        {% endblock %}
+        {% block scripts_page %}
+         <script src="{{ assets.url('assets://js/cookingform.js') | raw }}"></script>
+        {% endblock %}

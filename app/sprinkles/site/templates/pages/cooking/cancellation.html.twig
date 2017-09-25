@@ -1,0 +1,23 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Cancel  your booking{% endblock %}
+
+{% block body_matter %}
+    Welcome, {{ current_user.first_name }}!
+    {% include "pages/cooking/cooking-default-options.html.twig" %}
+    <div class="container">
+<form class="js-form" method="{{form.method | default('GET')}}" action="{{site.uri.public}}/cooking/cancellation/confirmation">
+  {% include "forms/csrf.html.twig" %}
+    <h1>Cooks engaged: </br></h1>
+    {% for i in cancel %}
+        <h4>
+          <label class="checkbox-inline">
+            <input type="radio" id="inlineCheckbox1" name="ckmobno" value="{{i.mobno}}"> {{i.cook_name}} {{i.created_at}} {{i.contact_no}}
+        </label>
+      </h4>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-warning">Cancel the cook</button>
+  </div>
+        {% endblock %}

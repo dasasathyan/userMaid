@@ -1,0 +1,120 @@
+    <form id="cookingform" action="{{site.uri.public}}/cookingform" method="get">
+      {% include "forms/csrf.html.twig" %}
+      <div class="form-group has-feedback">
+    <div class="row">
+      <div class="col-md-3"></div>
+        <div class="col-md-5">
+        <h3> What would you like to have</h3>
+      <div class="radio">
+        <label>
+
+          <input type="radio" name="type" id="veg" value="veg" onchange="showDiv(this)" checked >
+          Vegetarian
+          </label>
+          </div>
+          <div class="radio">
+          <label>
+          <input type="radio" name="type" id="nonveg" value="nonveg">
+          Non-Vegetarian
+        </label>
+      </div></div>
+      </div>
+      <div class = "row">
+      <div class="col-md-3"></div>
+        <div class="col-md-5">
+      <h3> What Cuisine would you like to have</h3>
+              <select name="cuisine" class="form-control">
+          <option>South-Indian</option>
+          <option>North-Indian</option>
+          <option>East-Indian</option>
+          <option>West-Indian</option>
+            </select>
+            </div></div>
+
+            <div class = "row">
+            <div class="col-md-3"></div>
+              <div class="col-md-5">
+            <h3> Select the time</h3>
+              <select name="time" class="form-control">
+                <option>6:00</option>
+                <option>7:00</option>
+                <option>8:00</option>
+                <option>9:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
+                <option>13:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+                <option>17:00</option>
+                <option>18:00</option>
+                <option>19:00</option>
+                <option>20:00</option>
+                <option>21:00</option>
+                <option>22:00</option>
+                <option>23:00</option>
+              </select>
+                  </div></div><br>
+
+                  <div class = "row">
+                  <div class="col-md-3"></div>
+                    <div class="col-md-5">
+                  <h3>Where do you want our Cook to come</h3>
+
+                    <input type="text" id="cooking_area" name="cooking_area" class="form-control" placeholder="Enter your area" required  />
+                    </div>
+                        </div></div>
+
+
+                        <div class = "row">
+                        <div class="col-md-3"></div>
+                          <div class="col-md-5">
+                          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                          <link rel="stylesheet" href="/resources/demos/style.css">
+                          
+
+                        {% block scripts_site %}
+                        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                        <script>
+                        $(function() {
+                          $("#submitCooking").click(function() {
+            var link = '{{site.uri.public}}/cooking/book?format=json&cooking_area=';
+            var cooking = $("#cooking_area").val();
+            window.location = link + cooking;
+        });
+    });
+    $('input[name="type"]').click(function() {
+    console.log($(this).val());
+    if($(this).val() == "veg") {
+        document.getElementById('rs500').style.display = "block";
+        document.getElementById('rs1000').style.display = "none";
+      }
+      else {
+        document.getElementById('rs500').style.display = "none";
+        document.getElementById('rs1000').style.display = "block";
+      }
+    })
+        </script>
+              {{ assets.js() | raw }}
+          {% endblock %}
+          </div></div>
+
+          <div class="row">
+            <div class="col-md-3"> </div>
+              <div class="col-md-6">
+                <h3> </h3>
+                <h3 id ="rs500">The fare for your Vegetarian cook is ₹ 500</h3>
+                <h3 id ="rs1000" style="display: none;">The fare for your Non - Vegetarian cook is ₹ 1000</h3>
+
+              </div></div>
+                  <div class = "row">
+                  <div class="col-md-3"></div>
+                    <div class="col-md-5">
+                <button onclick="alertBox()" type="submit" id="submitCooking" class="btn btn-primary btn-lg btn-block"> Check Availability</button><br>
+                  <button type="button" class="btn btn-default btn-xs"><a href="{{site.uri.public}}#booking">< Book some other service</a></button>
+  </div></div></div>
+                  </form>
+    </div>
+  </form>

@@ -1,0 +1,3 @@
+.cookingnav:hover {
+   background-image:{{assets.url("assets://images/navigation/cook1.png")}};
+}
